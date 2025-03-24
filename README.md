@@ -28,9 +28,8 @@ Başlangıç istasyonu öncelik kuyruğuna eklenir. İstasyonları ziyaret edere
 
 # Neden Bu Algoritmaları Kullandık?
 
-BFS: En az aktarmalı rotayı bulmak için idealdir, çünkü her seviyedeki düğümleri aynı anda genişletir ve ilk bulunan hedef en kısa yoldur.
-
-A*: A* algoritması, tahmini mesafeyi (h(n)) ve şu ana kadarki maliyeti (g(n)) hesaplayarak en kısa sürede hedefe ulaşan yolu seçer.
+BFS: En az aktarmalı rotayı bulmak için idealdir, çünkü BFS genişlik öncelikli aramayı temsil eder yani her seviyedeki düğümleri aynı anda genişletir ilk bulunan hedef en kısa yoldur.
+A*: BFS en az aktarmalı  rotayı bulsa da her durağın geçiş süresi farklı olabilir.Bazı hatlar daha hızlı, bazıları daha yavaş çalışabilir. Bu yüzden en hızlı rotayı bulurken A* algoritmasını kullanırız. A* algoritması, tahmini mesafeyi (h(n)) ve şu ana kadarki maliyeti (g(n)) hesaplayarak en kısa sürede hedefe ulaşan yolu seçer.
 
 # Örnek Kullanım ve Test Sonuçları
 M1 -> K4:
