@@ -1,5 +1,5 @@
 # Metro Ağı Simülasyonu
-Bu proje, kullanıcıların bir metro ağındaki iki istasyon arasındaki en hızlı ve en az aktarmalı rotayı bulmalarını sağlamak amacıyla hazırlanmıştır.
+Bu proje, kullanıcıların bir metro ağındaki iki istasyon arasındaki en hızlı veya en az aktarmalı rotayı bulmalarını sağlamak amacıyla hazırlanmıştır. Metro ağında kırmızı,mavi,turuncu olmak üzere üç hat bulunmaktadır. Her metro hattının duurakları arasında bağlantı bulunmakla birlikte farklı metro hatlarının birbiri ile de bağlantısı bulunmaktadır.
 Simülasyon Python yazılım diliyle hazırlanmış, Bread-First Search ve A* algoritmaları kullanılmıştır.
 
 # Kullanılan Teknolojiler ve Kütüphaneler
@@ -11,19 +11,19 @@ typing: Python'un tür ipuçlarını sağlamak için Dict, List, Set, Tuple, Opt
 
 # BFS Algoritmasının Çalışma Mantığı
 
-BFS algoritmasnın temel amacı iki hedef arasındaki en kısa mesafeyi bulmaktır. BFS kullanılırken queue yani kuyruk veri yapısı kullanılır. Bu veri yapısı Fİrst-In-Fİrst-Out çalışma prensibiyle işler. İlk olarak bir başlangıç node'u yani düğümü seçilir. Bu düğüm daha sonra tekrar kontrol etmemek için ziyaret edilennler listesine eklenir. Ardından bu düğümün komşuları da kuyruğa eklenir ve ilk başta ziyaret ettiğimiz düğüm kuyruktan çıkarılır. Bu da FIFO çalışma prensibinden kaynaklanır. Bu işlem aynı şekilde tüm düğümler üzerinde devam eder.  Bu projede bu algoritmanın çalışma mantığı şu şekildedir:
+BFS algoritmasnın temel amacı iki hedef arasındaki en kısa mesafeyi bulmaktır. BFS kullanılırken queue yani kuyruk veri yapısı kullanılır. Bu veri yapısı First-In-First-Out çalışma prensibiyle işler. İlk olarak bir başlangıç node'u yani düğümü seçilir. Bu düğüm daha sonra tekrar kontrol etmemek için ziyaret edilennler listesine eklenir. Ardından bu düğümün komşuları da kuyruğa eklenir ve ilk başta ziyaret ettiğimiz düğüm kuyruktan çıkarılır. Bu da FIFO çalışma prensibinden kaynaklanır. Bu işlem aynı şekilde tüm düğümler üzerinde devam eder.  Bu projede bu algoritmanın çalışma mantığı şu şekildedir:
 
 Metronun başlangıç istasyonu queue içine eklenir ve ziyaret edilen istasyon listesine eklenir. Bu istasyon kuyruktan çıkarılır ve istasyonun komşuları kontrol edilir. Eğer varılmak istenile istasyon komşu değerlerinden biriyse en kısa aktarma tespit edilmiş olur. Eğer hedef istasyon değilse tüm komşular sırayla kuyruğa eklenir ve bulunana kadar devam eder.
 
 
 # A* Algoritmasının Çalışma Mantığı
-A* algoritması, en hızlı rotayı bulmak için öncelikli kuyruk (priority queue) kullanır.En düşük f(n) değerine sahip olan düğüm her zaman kuyruğun önüne gelir. En düşük değeri olan düğümü alır ve bu düğümü kuyruktan çıkarır. Bu düğüme göre komşu düğümlerin de değeri güncellenir. Hedefe varılana kadar yani kuyrukta düğüm kalmayana kkdar bu adımlar tekrar edilir.
+A* algoritması, en hızlı rotayı bulmak için öncelikli kuyruk (priority queue) kullanır.En düşük f(n) değerine sahip olan düğüm her zaman kuyruğun önüne gelir. En düşük değeri olan düğümü alır ve bu düğümü kuyruktan çıkarır. Bu düğüme göre komşu düğümlerin de değeri güncellenir. Hedefe varılana kadar yani kuyrukta düğüm kalmayana kadar bu adımlar tekrar edilir.
 f(n) = g(n) + h(n)
 f(n) = hesaplama yapan sezgisel (heuristic) fonksiyon.
 g(n) = Başlangıç düğümünden mevcut düğüme kadar gelmenin maliyeti
 h(n) = Mevcut düğümden hedef düğüme varmak için tahmin edilen mesafe.
 
-Başlangıç istasyonu öncelik kuyruğuna eklenir. İstasyonları ziyaret ederek, en düşük maliyetli (toplam süre açısından) komşuya öncelik verir. Her iterasyonda, toplam süre hesaplanır ve en kısa sürede ulaşılabilecek rota takip edilir. Hedef istasyona ulaşıldığında, istasyon listesi ve toplam süre kullanıcıya döndürülür.
+Başlangıç istasyonu öncelik kuyruğuna eklenir. İstasyonları ziyaret ederek, toplam süre açısından en düşük maliyetli komşuya öncelik verir. Her iterasyonda, toplam süre hesaplanır ve en kısa sürede ulaşılabilecek rota takip edilir. Hedef istasyona ulaşıldığında, istasyon listesi ve toplam süre kullanıcıya döndürülür.
 
 
 # Neden Bu Algoritmaları Kullandık?
