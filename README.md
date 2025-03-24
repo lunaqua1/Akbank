@@ -6,8 +6,10 @@ Simülasyon Python yazılım diliyle hazırlanmış, Bread-First Search ve A* al
 Bu projede aşağıdaki kütüphaneler kullanılmıştır:
 
 collections: BFS algoritmasını uygulamak için deque yapısını içerir.
-heapq: A* algoritması için öncelikli kuyruk oluşturmak amacıyla kullanılır.
-typing: Python'un tür ipuçlarını sağlamak için Dict, List, Set, Tuple, Optional gibi veri türleri kullanılmıştır.
+
+heapq: A* algoritması için priority queue oluşturmak için kullanılır.
+
+typing: Dict, List, Set, Tuple, Optional gibi veri türleri kullanılmıştır.
 
 # BFS Algoritmasının Çalışma Mantığı
 
