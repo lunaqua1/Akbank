@@ -18,6 +18,7 @@ Metronun başlangıç istasyonu queue içine eklenir ve ziyaret edilen istasyon 
 
 # A* Algoritmasının Çalışma Mantığı
 A* algoritması, en hızlı rotayı bulmak için öncelikli kuyruk (priority queue) kullanır.En düşük f(n) değerine sahip olan düğüm her zaman kuyruğun önüne gelir. En düşük değeri olan düğümü alır ve bu düğümü kuyruktan çıkarır. Bu düğüme göre komşu düğümlerin de değeri güncellenir. Hedefe varılana kadar yani kuyrukta düğüm kalmayana kadar bu adımlar tekrar edilir.
+
 f(n) = g(n) + h(n)
 f(n) = hesaplama yapan sezgisel (heuristic) fonksiyon.
 g(n) = Başlangıç düğümünden mevcut düğüme kadar gelmenin maliyeti
@@ -29,6 +30,7 @@ Başlangıç istasyonu öncelik kuyruğuna eklenir. İstasyonları ziyaret edere
 # Neden Bu Algoritmaları Kullandık?
 
 BFS: En az aktarmalı rotayı bulmak için idealdir, çünkü BFS genişlik öncelikli aramayı temsil eder yani her seviyedeki düğümleri aynı anda genişletir ilk bulunan hedef en kısa yoldur.
+
 A*: BFS en az aktarmalı  rotayı bulsa da her durağın geçiş süresi farklı olabilir.Bazı hatlar daha hızlı, bazıları daha yavaş çalışabilir. Bu yüzden en hızlı rotayı bulurken A* algoritmasını kullanırız. A* algoritması, tahmini mesafeyi (h(n)) ve şu ana kadarki maliyeti (g(n)) hesaplayarak en kısa sürede hedefe ulaşan yolu seçer.
 
 # Örnek Kullanım ve Test Sonuçları
